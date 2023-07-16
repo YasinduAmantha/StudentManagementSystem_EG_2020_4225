@@ -1,0 +1,135 @@
+﻿<Window x:Class="StudentManagementSystem.StartupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagementSystem"
+        mc:Ignorable="d"
+        Title="UoR FoE Student Management System" Height="400" Width="700"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
+        Background="Transparent" AllowsTransparency="True">
+
+    <Window.DataContext>
+        <local:StartupWindowVM/>
+    </Window.DataContext>
+    
+    <Border CornerRadius="20">
+
+        <Border.Background>
+            <ImageBrush ImageSource="/icons/ruhuna.jpg"
+                        Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="20" BorderThickness="3"
+                Opacity="0.95">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#fc032c" Offset="0"/>
+                    <GradientStop Color="#034efc" Offset="0.75"/>
+                    <GradientStop Color="#f0fc03" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="1"/>
+                    <GradientStop Color="#1B1448" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="UoR FoE Student Management System"
+                               Foreground="White"
+                               FontSize="10"
+                               FontFamily="Andalus"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0"/>
+
+                    <Button Style="{StaticResource MiniButton}" x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1" Command="{Binding MinimizeWindowCommand}">
+                    </Button>
+
+                    <Button Style="{StaticResource CloseButton}" x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Height="30" VerticalAlignment="Top"  Command="{Binding CloseWindowCommand}" >
+                    </Button>
+
+                </Grid>
+
+                <StackPanel
+                            Grid.Row="1"
+                            Orientation="Vertical" HorizontalAlignment="Center"
+                            Margin="0,20,0,0" Width="282">
+
+                    <StackPanel Orientation="Horizontal" Width="200">
+                        <Image Source="/icons/UoR Logo.png"
+                           Width="100" Height="100"/>
+                        <Image Source="/icons/FoE Logo.png" 
+                           Width="100" Height="100"/>
+                    </StackPanel>
+
+                    <TextBlock Text="University of Ruhuna" Margin="0 20 0 10"
+                               Foreground="White"
+                               FontSize="25"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Faculty of Engineering"
+                               Foreground="LightGray"
+                               FontSize="20"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,5,0,0"/>
+
+                    <Button Style="{StaticResource ClickMeButton}" x:Name="btnLogin"                          
+                            BorderThickness="0"
+                            Content="Click Me"
+                            Foreground="White"
+                            FontSize="18"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,50,0,0" Command="{Binding loginCommand}"/>
+
+
+                </StackPanel>
+
+
+            </Grid>
+
+        </Border>
+
+    </Border>
+
+</Window>

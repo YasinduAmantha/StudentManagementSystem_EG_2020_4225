@@ -1,0 +1,227 @@
+﻿<Window x:Class="StudentManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagementSystem"
+        mc:Ignorable="d"
+        Title="Student Management System" Height="596" Width="1066"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+
+    <Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border CornerRadius="20 0 0 20" BorderThickness="3 3 0 3">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#fc032c" Offset="0"/>
+                    <GradientStop Color="#034efc" Offset="0.75"/>
+                    <GradientStop Color="#f0fc03" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#83a4d4" Offset="0" />
+                    <GradientStop Color="#3AADA1" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#f7797d" Canvas.Left="57" Canvas.Top="181" RenderTransformOrigin="0.548,0.817" >
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-13.518"/>
+                                <TranslateTransform X="19.701" Y="-4.951"/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#f7797d" HorizontalAlignment="Left" Canvas.Top="-17" VerticalAlignment="Top" Canvas.Left="110" />
+                    <Ellipse Width="40" Height="40" Fill="#b6fbff" Canvas.Left="270" Canvas.Top="70" />
+                    <Ellipse Width="20" Height="20" Fill="#b6fbff" Canvas.Left="31" Canvas.Top="115" />
+                </Canvas>
+
+                <StackPanel Margin="0 100 0 0" Orientation="Vertical" VerticalAlignment="top">
+                    <TextBlock Text="WELCOME" Style="{StaticResource TitleText}" Margin="0 0 0 20"/>
+                    <TextBlock Text="Student Manegement System" Opacity="0.8" Style="{StaticResource NormalText}" />
+
+                    <Button Style="{StaticResource AddStudent}" Command="{Binding InsertStudentCommand}" Margin="0 300 0 0" Width="318"  >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/icons/addUser.png" Width="39" Height="27" RenderTransformOrigin="-0.436,0.6"/>
+                            <TextBlock Text="Add Student" Width="105"
+                                   Foreground="White" Margin="10 0 0 0"
+                            FontSize="18"/>
+                        </StackPanel>
+
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+        <Border Grid.Column="1" CornerRadius="0 20 20 0" BorderThickness="0 3 3 3">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#fc032c" Offset="0"/>
+                    <GradientStop Color="#034efc" Offset="0.75"/>
+                    <GradientStop Color="#f0fc03" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#A1FFCE" Offset="1"/>
+                    <GradientStop Color="#FAFFD1" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <Button Style="{StaticResource MiniButton}" x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand" Grid.Column="1" Height="30" 
+                            VerticalAlignment="Top" Command="{Binding MinimizeWindowCommand}"/>
+
+                    <Button Style="{StaticResource CloseButton}" x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Height="30" VerticalAlignment="Top"  Command="{Binding CloseWindowCommand}" >
+                    </Button>
+
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="0,0,0,0">
+
+                    <StackPanel>
+
+                        <TextBlock
+                    Margin="0,0,0,10"
+                    HorizontalAlignment="Center"
+                    FontSize="36"
+                            FontFamily="Kartika"
+                    FontWeight="ExtraBold"
+                    Foreground="Black"
+                    Text="Student List" />
+
+                        <StackPanel Orientation="Horizontal" Margin="10 0 10 0" >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource ListTopic}"
+                                           Text="Image" Width="69"/>
+                                <TextBlock Style="{StaticResource ListTopic}"
+                                           Text="First Name" Width="130"/>
+                                <TextBlock Style="{StaticResource ListTopic}"
+                                           Text="Last Name" Width="130"/>
+                                <TextBlock Style="{StaticResource ListTopic}"
+                                           Text="Date of Birth" Width="130"/>
+                                <TextBlock Style="{StaticResource ListTopic}"
+                                           Text="GPA" Width="60"/>
+                                <TextBlock Style="{StaticResource ListTopic}"
+                                           Text="Options" Width="162"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <ListView
+                        x:Name="StudentListview"
+                        Height="433"
+                        Margin="0,20,0,0"
+                        Background="Transparent"
+                        ItemsSource="{Binding Students,UpdateSourceTrigger=PropertyChanged}"
+                            SelectedItem="{Binding SelectedStudent,UpdateSourceTrigger=PropertyChanged}" Width="725">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border
+                                    Width="706"
+                                    Height="45"
+                                    Padding="0.1"
+                                    Background="Transparent"
+                                    BorderBrush="Black"
+                                    BorderThickness="1"
+                                    CornerRadius="5">
+                                    <StackPanel Orientation="Horizontal" Background="Transparent" Margin="-1,0,-1,0">
+
+                                            <Image Height="45" Width="45" Margin="15 0 0 0" Source="{Binding Image}" />
+                                            <TextBlock Margin="40 0 0 0" Text="{Binding FirstName,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListTopic}" Height="27" Width="140" />
+                                            <TextBlock Text="{Binding LastName,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListTopic}" Width="127" />
+                                            <TextBlock Text="{Binding DOB,UpdateSourceTrigger=PropertyChanged, StringFormat=dd/MM/yyyy}"  Style="{StaticResource ListTopic}" Width="128" />
+                                            <TextBlock Text="{Binding GPA,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource ListTopic}" Width="56" />
+
+                                            <Button
+                                              
+                                            Margin="10,0,10,0"
+                                            Command="{Binding DataContext.DetailEditStudentCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding}"
+                                            Style="{StaticResource ListEditButton}">
+                                                <Image
+                                                Width="20"
+                                                Height="20"
+                                                Source="/icons/editname.png" />
+                                            </Button>
+                                            <Button Command="{Binding DataContext.DeleteStudentCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" Style="{StaticResource ListDelButton}">
+                                                <Image
+                                                Width="20"
+                                                Height="20"
+                                                Source="/icons/deletename.png" />
+                                            </Button>
+
+                                        </StackPanel>
+                                    
+                                    </Border>
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                   
+                    
+                    </StackPanel>
+
+                </Grid>
+
+
+            </Grid>
+
+        </Border>
+
+
+    </Grid>
+
+</Window>

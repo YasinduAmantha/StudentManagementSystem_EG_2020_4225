@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons\1.png" />
+    <None Remove="icons\2.png" />
+    <None Remove="icons\3.png" />
+    <None Remove="icons\4.png" />
+    <None Remove="icons\add-user.png" />
+    <None Remove="icons\addUser.png" />
+    <None Remove="icons\back.png" />
+    <None Remove="icons\cancel.png" />
+    <None Remove="icons\clean.png" />
+    <None Remove="icons\clear.png" />
+    <None Remove="icons\delete.png" />
+    <None Remove="icons\deletename.png" />
+    <None Remove="icons\edit.png" />
+    <None Remove="icons\editname.png" />
+    <None Remove="icons\exit-full-screen.png" />
+    <None Remove="icons\FoE Logo.png" />
+    <None Remove="icons\ruhuna.jpg" />
+    <None Remove="icons\save.png" />
+    <None Remove="icons\UoR Logo.png" />
+    <None Remove="icons\upload.jpg" />
+    <None Remove="icons\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\1.png" />
+    <Resource Include="icons\2.png" />
+    <Resource Include="icons\3.png" />
+    <Resource Include="icons\4.png" />
+    <Resource Include="icons\addUser.png" />
+    <Resource Include="icons\add-user.png" />
+    <Resource Include="icons\back.png" />
+    <Resource Include="icons\cancel.png" />
+    <Resource Include="icons\clean.png" />
+    <Resource Include="icons\clear.png" />
+    <Resource Include="icons\delete.png" />
+    <Resource Include="icons\deletename.png" />
+    <Resource Include="icons\edit.png" />
+    <Resource Include="icons\editname.png" />
+    <Resource Include="icons\exit-full-screen.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\FoE Logo.png" />
+    <Resource Include="icons\ruhuna.jpg" />
+    <Resource Include="icons\save.png" />
+    <Resource Include="icons\UoR Logo.png" />
+    <Resource Include="icons\upload.jpg" />
+    <Resource Include="icons\user.png" />
+  </ItemGroup>
+
+</Project>
